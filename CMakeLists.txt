@@ -35,7 +35,7 @@ set(CMAKE_INSTALL_INCLUDE "${CMAKE_INSTALL_PREFIX}/include/agv_tools")
 set(CMAKE_INSTALL_LIB "${CMAKE_INSTALL_PREFIX}/lib")
 set(CMAKE_INSTALL_BIN "${CMAKE_INSTALL_PREFIX}/bin")
 
-add_subdirectory(source/agv_tools/local_image2d_tool)
+add_subdirectory(source/local_image2d_tool)
 
 
 # install third-party libraries

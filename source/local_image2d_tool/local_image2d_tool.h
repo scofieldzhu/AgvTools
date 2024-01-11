@@ -2,7 +2,7 @@
  *   AgvTools is AgileVision tool library set, added by the tool library developed base on AgileVision framework libary.
  *   Each tool libary is independent with each other.
  *  
- *   File: local_image2d_tool.cpp  
+ *   File: local_image2d_tool.h  
  *   Copyright (c) 2024-2024 scofieldzhu
  *  
  *   MIT License
@@ -26,3 +26,27 @@
  *   SOFTWARE.
  */
 
+#pragma once
+
+#include <opencv2/opencv.hpp>
+#include "agile_vision/core/tool.h"
+#include "local_image2d_tool/tool_export.h"
+
+class LOCAL_IMAGE2D_TOOL_API LocalImage2dTool : public agile_vision::Tool
+{
+public:
+    static constexpr agile_vision::PinKey PK_P_ImagePath = "ImagePath";
+    static constexpr agile_vision::PinKey PK_P_DirType = "DirType";
+    static constexpr agile_vision::PinKey PK_O_ImageData = "ImageData";
+    std::string getClsGuid()const override;
+    LocalImage2dTool(const std::string& iid);
+    ~LocalImage2dTool();
+
+private:
+    bool requestOutputData() override;
+    cv::Mat image_;
+};
+
+LOCAL_IMAGE2D_TOOL_API const char* GetToolClsID();
+LOCAL_IMAGE2D_TOOL_API agile_vision::Tool* CreateToolInstance(const char* iid);
+LOCAL_IMAGE2D_TOOL_API void DestroyToolInstance(agile_vision::Tool* t);

@@ -28,20 +28,12 @@
 
 #pragma once
 
-// #include "agile_vision/core/tool.h"
-// #include <opencv2/opencv.hpp>
+#include "ratel/basic/cross_platform.h"
 
-// class LocalImage2d : public agile_vision::Tool
-// {
-// public:
-//     static constexpr agile_vision::PinKey PK_P_ImagePath = "ImagePath";
-//     static constexpr agile_vision::PinKey PK_P_DirType = "DirType";
-//     static constexpr agile_vision::PinKey PK_O_ImageData = "ImageData";
-//     std::string getClsGuid()const override;
-//     LocalImage2d(const std::string& iid);
-//     ~LocalImage2d();
-
-// private:
-//     bool requestOutputData() override;
-//     cv::Mat image_;
-// };
+#ifdef PLATFORM_WIN
+    #ifdef LOCAL_IMAGE2D_TOOL_EXPORT
+        #define LOCAL_IMAGE2D_TOOL_API __declspec(dllexport)
+    #else
+        #define LOCAL_IMAGE2D_TOOL_API __declspec(dllimport)
+    #endif
+#endif
