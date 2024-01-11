@@ -47,6 +47,8 @@ private:
     cv::Mat image_;
 };
 
+RATEL_EXTERN_C_BEGIN
 LOCAL_IMAGE2D_TOOL_API const char* GetToolClsID();
 LOCAL_IMAGE2D_TOOL_API agile_vision::Tool* CreateToolInstance(const char* iid);
 LOCAL_IMAGE2D_TOOL_API void DestroyToolInstance(agile_vision::Tool* t);
+RATEL_EXTERN_C_END

@@ -28,12 +28,12 @@
 
 #pragma once
 
-#include "ratel/basic/cross_platform.h"
+#include "ratel/basic/export_macro.h"
 
 #ifdef PLATFORM_WIN
     #ifdef LOCAL_IMAGE2D_TOOL_EXPORT
-        #define LOCAL_IMAGE2D_TOOL_API __declspec(dllexport)
+        #define LOCAL_IMAGE2D_TOOL_API RATEL_WIN_DLL_EXPORT
     #else
-        #define LOCAL_IMAGE2D_TOOL_API __declspec(dllimport)
+        #define LOCAL_IMAGE2D_TOOL_API RATEL_WIN_DLL_IMPORT
     #endif
 #endif
